@@ -1,4 +1,4 @@
-# SSE-13081112
+`# SSE-13081112
 ## 一些简短的基本介绍
 ***
 * 李帆
@@ -18,7 +18,7 @@
   `val s = "Hello"
    println( s )`
  + 这种的就差点意思了T^T
-  `vector<int> getRandom(int total)
+  ```vector<int> getRandom(int total)
       {
         srand((int)time(NULL));
         std::vector<int> input = *new std::vector<int>();
@@ -36,8 +36,7 @@
             end--;
         }
         return output;
-      }`
+      }```
 - 爱做白日**梦**
-- **没课**的时候我都是这样的
- + ![睡觉的我](http://img4.imgtn.bdimg.com/it/u=3676068438,2343985742&fm=21&gp=0.jpg "睡觉的我")
+
 
