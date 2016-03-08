@@ -46,9 +46,9 @@ class Bitmap extends DisplayObject {
 
 class Rect extends DisplayObject {
 
-    width = 550
+    width = 100;
 
-    height = 400;
+    height = 100;
 
     color = '#FF0000';
 
@@ -121,8 +121,8 @@ var text = new TextField();
 text.x = 10;
 
 var bitmap = new Bitmap();
-bitmap.x = 20;
-bitmap.y = 5;
+bitmap.x = 100;
+bitmap.y = 20;
 bitmap.source = 'tree.png';
 
 //渲染队列
