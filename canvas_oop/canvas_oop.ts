@@ -104,9 +104,9 @@ var context = canvas.getContext("2d");
 
 
 var rect = new Rect();
-rect.width = 200;
-rect.height = 100;
-rect.color = '#00FF00'
+rect.width = 550;
+rect.height = 363;
+rect.color = '#00FFFF'
 
 
 var rect2 = new Rect();
@@ -121,6 +121,8 @@ var text = new TextField();
 text.x = 10;
 
 var bitmap = new Bitmap();
+bitmap.x = 20;
+bitmap.y = 5;
 bitmap.source = 'tree.png';
 
 //渲染队列
