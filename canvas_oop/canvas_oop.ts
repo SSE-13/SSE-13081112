@@ -51,6 +51,7 @@ class Rect extends DisplayObject {
     height = 100;
 
     color = '#FF0000';
+    
 
     render(context: CanvasRenderingContext2D) {
         context.fillStyle = this.color;
@@ -59,12 +60,17 @@ class Rect extends DisplayObject {
 }
 
 class TextField extends DisplayObject {
-
+    
+    font = '10px Arial';
+    color = '#000000';
+    text = 'HelloWorld';
     render(context: CanvasRenderingContext2D) {
-        context.font = "20px Arial";
-        context.fillStyle = '#000000';
-        context.fillText('HelloWorld', 0, 20);
+        context.font = this.font;
+        context.fillStyle = this.color;
+        context.fillText(this.text, 0, 20);
+        
     }
+    
 }
 
 function drawQueue(queue) {
@@ -106,7 +112,7 @@ var context = canvas.getContext("2d");
 var rect = new Rect();
 rect.width = 550;
 rect.height = 200;
-rect.color = '#00FFFF'
+rect.color = '#00FFFF';
 
 
 //var rect2 = new Rect();
@@ -117,18 +123,40 @@ rect.color = '#00FFFF'
 //rect2.rotation = Math.PI / 8;
 //rect2.color = '#00FFFF'
 
-var text = new TextField();
-text.x = 10;
+var button1 = new Rect();
+button1.width = 400;
+button1.height = 50;
+button1.x = 20;
+button1.y = 100;
+button1.color = '00FF00'; 
 
-var bitmap = new Bitmap();
-bitmap.x = 100;
-bitmap.y = 20;
-bitmap.source = 'tree.png';
+var text = new TextField();
+text.x = 20;
+text.y = 100;
+
+text.text = 'Play';
+
+var tree = new Bitmap();
+tree.x = 40;
+tree.y = 20;
+tree.source = 'tree.png';
+
+var title = new Bitmap();
+title.x = 100;
+title.y = 20;
+title.source = 'title.png';
+
+var bitmap1 = new Bitmap();
+bitmap1.x = 60;
+bitmap1.y = 100;
+bitmap1.source = 'first.png';
+
+
 
 //渲染队列
-var renderQueue = [rect, text,bitmap];
+var renderQueue = [rect, text,tree,title, button1,bitmap1 ];
 //资源加载列表
-var imageList = ['tree.png'];
+var imageList = ['tree.png','title.png','first.png'];
 
 //先加载资源，加载成功之后执行渲染队列
 loadResource(imageList, function() {
