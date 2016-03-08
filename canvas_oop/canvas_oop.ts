@@ -105,7 +105,7 @@ var context = canvas.getContext("2d");
 
 var rect = new Rect();
 rect.width = 550;
-rect.height = 363;
+rect.height = 200;
 rect.color = '#00FFFF'
 
 
