@@ -111,7 +111,7 @@ var context = canvas.getContext("2d");
 
 var rect = new Rect();
 rect.width = 550;
-rect.height = 200;
+rect.height = 500;
 rect.color = '#00FFFF';
 
 
@@ -125,10 +125,10 @@ rect.color = '#00FFFF';
 
 var button1 = new Rect();
 button1.width = 400;
-button1.height = 50;
+button1.height = 20;
 button1.x = 20;
-button1.y = 100;
-button1.color = '00FF00'; 
+button1.y = 150;
+button1.color = '#FFFF00'; 
 
 var text = new TextField();
 text.x = 20;
@@ -143,12 +143,12 @@ tree.source = 'tree.png';
 
 var title = new Bitmap();
 title.x = 100;
-title.y = 20;
+title.y = 50;
 title.source = 'title.png';
 
 var bitmap1 = new Bitmap();
 bitmap1.x = 60;
-bitmap1.y = 100;
+bitmap1.y = 150;
 bitmap1.source = 'first.png';
 
 
