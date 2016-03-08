@@ -46,9 +46,9 @@ class Bitmap extends DisplayObject {
 
 class Rect extends DisplayObject {
 
-    width = 100
+    width = 550
 
-    height = 100;
+    height = 400;
 
     color = '#FF0000';
 
@@ -104,7 +104,7 @@ var context = canvas.getContext("2d");
 
 
 var rect = new Rect();
-rect.width = 800;
+rect.width = 550;
 rect.height = 363;
 rect.color = '#00FFFF'
 
