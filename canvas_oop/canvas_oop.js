@@ -114,7 +114,7 @@ button1.width = 400;
 button1.height = 20;
 button1.x = 20;
 button1.y = 150;
-button1.color = '#FFFF00';
+button1.color = '#5294d1';
 var text = new TextField();
 text.x = 20;
 text.y = 150;
@@ -132,7 +132,7 @@ bitmap1.x = 60;
 bitmap1.y = 150;
 bitmap1.source = 'first.png';
 //渲染队列
-var renderQueue = [rect, text, tree, title, button1, bitmap1];
+var renderQueue = [rect, tree, title, button1, bitmap1, text];
 //资源加载列表
 var imageList = ['tree.png', 'title.png', 'first.png'];
 //先加载资源，加载成功之后执行渲染队列
