@@ -111,7 +111,7 @@ var context = canvas.getContext("2d");
 
 var rect = new Rect();
 rect.width = 550;
-rect.height = 500;
+rect.height = 380;
 rect.color = '#00FFFF';
 
 
@@ -128,11 +128,11 @@ button1.width = 400;
 button1.height = 20;
 button1.x = 20;
 button1.y = 150;
-button1.color = '#FFFF00'; 
+button1.color = '#5294d1'; 
 
 var text = new TextField();
 text.x = 20;
-text.y = 100;
+text.y = 150;
 
 text.text = 'Play';
 
@@ -154,7 +154,7 @@ bitmap1.source = 'first.png';
 
 
 //渲染队列
-var renderQueue = [rect, text,tree,title, button1,bitmap1 ];
+var renderQueue = [rect,tree,title, button1,bitmap1,text];
 //资源加载列表
 var imageList = ['tree.png','title.png','first.png'];
 
