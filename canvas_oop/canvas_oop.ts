@@ -119,7 +119,7 @@ rect2.width = 200;
 rect2.height = 80;
 rect2.color = '#4c9da0';
 rect2.x = 200 ; 
-rect2.y = 200 ; 
+rect2.y = 400 ; 
 rect2.rotation = -Math.PI/6;
 
 
@@ -139,9 +139,9 @@ button1.y = 150;
 button1.color = '#306b29'; 
 
 var text = new TextField();
-text.x = 100;
-text.y = 150;
-text.font = '20px Arial';
+text.x = 200;
+text.y = 170;
+text.font = '25px Arial';
 text.text = 'Play';
 
 var tree = new Bitmap();
