@@ -120,7 +120,7 @@ rect2.height = 80;
 rect2.color = '#4c9da0';
 rect2.x = 200 ; 
 rect2.y = 200 ; 
-rect2.rotation = Math.PI/6;
+rect2.rotation = -Math.PI/6;
 
 
 //var rect2 = new Rect();
