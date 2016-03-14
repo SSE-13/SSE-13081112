@@ -73,6 +73,7 @@ class Body {
         if (this.x + this.width > BOUNDS_RIGHT) {
             this.vx = -BOUNCE * this.vx;
         }
+        
 
 
 
