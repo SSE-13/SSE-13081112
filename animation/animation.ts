@@ -64,14 +64,15 @@ class Body {
         this.y += duringTime * this.vy;
 
         //反弹
-
-
-        //TODO： 左右越界反弹
-        
-        if (this.x + this.width > BOUNDS_RIGHT) {
-            this.vx = -BOUNCE * this.vx;
+        if (this.y + this.height > BOUNDS_BOTTOM) {
+            this.vy = -BOUNCE * this.vy;
         }
         
+        if(this.x + this.width > BOUNDS_RIGHT) {
+            this.vx = -BOUNCE * this.vx;
+        }
+
+        //TODO： 左右越界反弹
 
 
 
@@ -85,7 +86,7 @@ class Body {
 
 
 var rect = new Rect();
-rect.width = 2200;
+rect.width = 150;
 rect.height = 100;
 rect.color = '#FF0000';
 
