@@ -52,7 +52,7 @@ class Rect extends DisplayObject {
 
     height = 100;
 
-    color = '#FF0000';
+    color = '#000000';
 
     render(context: CanvasRenderingContext2D) {
         context.fillStyle = this.color;
