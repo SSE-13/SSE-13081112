@@ -10,11 +10,7 @@ TotalContainer.addChild(humanContainer);
 humanContainer.x = -100;
 humanContainer.y = -100;
 
-var s = new render.Bitmap();
-s.source = 's.jpg';
-humanContainer.addChild(s);
-s.y= 0;
-s.x= 0;
+
 var head = new render.Bitmap();
 head.source = "wander-icon.png";
 humanContainer.addChild(head);
@@ -100,13 +96,13 @@ eventCore.init();
 
 var headHitTest = (localPoint:math.Point,displayObject:render.DisplayObject) =>{
     alert (`点击位置为${localPoint.x},${localPoint.y}`);
-    console.log(localPoint.x,localPoint.y,"fff",head.scaleX);
+    
     var lp_x : number;
     var lp_y : number;
     
     lp_x = localPoint.x;
     lp_y = localPoint.y;
-    if(0 < lp_x  && lp_x < 176 && 0 < lp_y && lp_y < 186 ){
+    if(0 < lp_x  && lp_x < 73 && 0 < lp_y && lp_y < 82 ){
         click_obj = "head";  
     }
     if((-20 < lp_x && lp_x < 35 && 160 < lp_y && 192 > lp_y) || (40 < lp_x && lp_x < 104 && 140 < lp_y && 183 > lp_y)){
