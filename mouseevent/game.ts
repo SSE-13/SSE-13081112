@@ -49,39 +49,22 @@ right_arm.y = 50;
 
 
 var renderCore = new render.RenderCore();
-renderCore.start(TotalContainer, ["wander-icon.png","body.png","leftleg.png","leftarm.png","rightleg.png","rightarm.png","s.jpg"]);
+renderCore.start(TotalContainer, ["wander-icon.png","body.png","leftleg.png","leftarm.png","rightleg.png","rightarm.png"]);
 
 
 
 class HumanBody extends Body {
  
-    vx:number = 1;
+    public vx:number = 5;
     public circle : number = 10*Math.PI;
     
 
     onTicker(duringTime: number) {
-        //this.vx = 1;
-        if(click_obj == "head"){
-            if(this.vx == 0) {
-                this.circle = 10*Math.PI;
-                this.vx = 1;
-            }
-            else {
-                this.circle = - this.circle;
-                click_obj = "no";
-            }
-            
-        }
-        if(click_obj == "leg"){
-            this.rotation = 0;
-            this.circle = 0;
-            this.vx = 0;
-        }
-        
-        console.log (click_obj,this.vx);
+
         this.x += this.vx * duringTime;
         
         this.rotation +=  this.circle * duringTime;
+      //  console.log(this.vx);
 
     }
 }
@@ -95,29 +78,69 @@ var eventCore = new events.EventCore();
 eventCore.init();
 
 var headHitTest = (localPoint:math.Point,displayObject:render.DisplayObject) =>{
-    alert (`点击位置为${localPoint.x},${localPoint.y}`);
+    //alert (`点击位置为${localPoint.x},${localPoint.y}`);
     
-    var lp_x : number;
-    var lp_y : number;
-    
-    lp_x = localPoint.x;
-    lp_y = localPoint.y;
-    if(0 < lp_x  && lp_x < 73 && 0 < lp_y && lp_y < 82 ){
-        click_obj = "head";  
+    if(0 < localPoint.x  && localPoint.x < 73 && 0 < localPoint.y && localPoint.y < 82 ){
+        return true;
     }
-    if((-20 < lp_x && lp_x < 35 && 160 < lp_y && 192 > lp_y) || (40 < lp_x && lp_x < 104 && 140 < lp_y && 183 > lp_y)){
-        click_obj = "leg";
-    }
+   
+     else return false;
     
-    
-
-    
-    return true;
 }
 
+
+
+
 var headOnClick = () => {
-    alert("clicked!!");
+    if(body.vx == 0){
+        body.vx = 5;
+        body.circle = 10*Math.PI;
+        
+    }
+    else {
+       body.vx = -body.vx;
+       body.circle = -body.circle;
+    }
+                
+            
+
     //修改 HumanBody 的速度，使其反向移动
 }
 
+var left_legHitTest = (localPoint:math.Point,displayObject:render.DisplayObject) =>{
+    
+    
+    if(0 < localPoint.x  && localPoint.x < 55 && 0 < localPoint.y && localPoint.y < 32 ){
+        return true;
+    }
+   
+     else return false;
+}
+
+var left_legOnClik = () => {
+    body.rotation = 0;
+    body.vx = 0 ;
+    body.circle = 0;
+    
+}
+
+var right_legHitTest = (localPoint:math.Point,displayObject:render.DisplayObject) =>{
+    
+    if(0 < localPoint.x  && localPoint.x < 64 && 0 < localPoint.y && localPoint.y < 43 ){
+        return true;
+    }
+    
+    else return false; 
+}
+
+var right_legOnClik = () => {
+    body.rotation = 0;
+    body.vx = 0 ;
+    body.circle = 0;
+    
+}
+
+
 eventCore.register(head,headHitTest,headOnClick);
+eventCore.register(left_leg,left_legHitTest,left_legOnClik);
+eventCore.register(right_leg,right_legHitTest,right_legOnClik);
