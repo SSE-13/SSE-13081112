@@ -63,14 +63,10 @@ function onTileClick(tile: editor.Tile) {
 
     var tileWalkable = mapData[tile.ownedRow][tile.ownedCol];
     if(tileWalkable == 1){
-         console.log("1-0",tileWalkable);
         tileWalkable = 0;
-        console.log("1-0",tileWalkable);
     }
     else if(tileWalkable == 0){
-         console.log("0-1",tileWalkable);
         tileWalkable = 1;
-        console.log("0-1",tileWalkable);
     }
     mapData[tile.ownedRow][tile.ownedCol] = tileWalkable;
     tile.setWalkable(tileWalkable);
